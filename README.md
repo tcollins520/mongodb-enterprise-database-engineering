@@ -2,7 +2,7 @@
 
 A portfolio-grade **NoSQL database engineering** project covering MongoDB Enterprise 8.0 administration, security, backup/restore, monitoring, data interchange, replica-set architecture, and a working sharded-cluster lab. The project uses CentOS Stream 9 and small, resource-constrained virtual machines to practice database operations with verifiable command-line checks. The GitHub repository is intended to emphasize the project's **MongoDB scripts, configuration examples, validation commands, and technical documentation**; infrastructure provisioning files are supporting material rather than the focus.
 
-> **Project status:** Standalone administration, CRUD/query operations, aggregation, indexing, access control, backup/restore, monitoring, and JSON/CSV interchange are complete. The sharded-cluster lab is also implemented: the three-member config-server replica set is healthy, the single-member data shard is active, `mongos` is running, authentication has been verified, and `labdb.events` is sharded. Replica-set operational drills and further sharding validation/documentation remain possible enhancements.
+> **Project status:** Standalone administration, CRUD/query operations, aggregation, indexing, access control, backup/restore, monitoring, and JSON/CSV interchange are complete. The sharded-cluster lab is also implemented: the three-member config-server replica set is healthy, the single-member data shard is active, `mongos` is running, authentication has been verified, and `labdb.events` is sharded.
 
 ## Project overview
 
