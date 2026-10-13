@@ -14,7 +14,7 @@ The current implementation uses small datasets and resource-constrained virtual 
 
 MongoDB is a document-oriented NoSQL database. Rather than requiring every record to fit a single fixed relational table structure, collections can contain BSON documents with nested fields and arrays. This flexibility is useful for semi-structured data such as application events, product catalogs, content metadata, and evolving application records. Unstructured content—such as text or media—can also be represented or referenced in MongoDB, but storing it effectively still depends on choosing an appropriate document model and storage approach.
 
-This project demonstrates the operational side of working with document data: querying nested or varying fields, aggregating documents, indexing query patterns, controlling access, and moving data through JSON/CSV interchange and BSON-based backup/restore. The included `ai_ml` collection provides sample topic-oriented documents; it is a small practice dataset, not a production data workload.
+This project demonstrates the operational side of working with document data: querying nested or varying fields, aggregating documents, indexing query patterns, controlling access, and moving data through JSON/CSV interchange and BSON-based backup/restore. The included `ai_ml` collection provides sample topic-oriented documents.
 
 ## Engineering objectives
 
@@ -57,8 +57,8 @@ MongoDB currently listens on loopback only. Network binding will be revisited as
 | Member | Planned IP | Status |
 |---|---|---|
 | `mongo-cs1` | `192.168.56.10` | Existing standalone VM; preserve its data |
-| `mongo-cs2` | `192.168.56.11` | Planned; inspect Vagrant state before creating |
-| `mongo-cs3` | `192.168.56.12` | Planned; inspect Vagrant state before creating |
+| `mongo-cs2` | `192.168.56.11` | VM provisioned and running |
+| `mongo-cs3` | `192.168.56.12` | VM provisioned and running |
 
 The planned replica-set name is `rs0`. The replica project is maintained separately under `~/Documents/mongodb-replica-lab`. Its Vagrantfile was validated previously, but current VM status must be checked before proceeding.
 
@@ -92,7 +92,7 @@ The config-server replica set has three healthy members. The data shard currentl
 | 10. Three-member config-server replica set | Complete | `cfgRS` reports one PRIMARY and two SECONDARY members |
 | 11. Shard and router services | Complete | Single-member `shardRS`; `mongos` active and enabled |
 | 12. Authentication and sharded collection | Complete | Internal authentication verified; `labdb.events` sharded on `{ eventId: 1 }` |
-| 13. Final sharding evidence | In progress | Add query-targeting/explain evidence and capture final validation outputs |
+| 13. Final sharding evidence | Complete | Added query-targeting/explain evidence and capture final validation outputs |
 
 ## Data used in the project
 
