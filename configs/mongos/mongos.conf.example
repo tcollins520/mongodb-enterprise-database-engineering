@@ -1,0 +1,15 @@
+# Example only: adapt to the completed sharded-cluster host and its actual
+# config-server replica-set connection string before use.
+systemLog:
+  destination: file
+  logAppend: true
+  path: /var/log/mongodb/mongos.log
+processManagement:
+  fork: false
+net:
+  port: 27017
+  bindIp: 127.0.0.1,192.168.56.121
+sharding:
+  configDB: cfgRS/192.168.56.101:27017,192.168.56.102:27017,192.168.56.103:27017
+security:
+  keyFile: /etc/mongodb-sharded-key

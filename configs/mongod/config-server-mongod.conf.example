@@ -1,0 +1,21 @@
+# Merge into the existing mongod configuration on shard-cfg1/cfg2/cfg3.
+# Use each VM's own IP in bindIp. Keep keyfile consistent across cluster nodes.
+systemLog:
+  destination: file
+  logAppend: true
+  path: /var/log/mongodb/mongod.log
+storage:
+  dbPath: /var/lib/mongo
+processManagement:
+  timeZoneInfo: /usr/share/zoneinfo
+net:
+  port: 27017
+  bindIp: 127.0.0.1,REPLACE_WITH_THIS_VM_IP
+security:
+  authorization: enabled
+  keyFile: /etc/mongodb-sharded-key
+sharding:
+  clusterRole: configsvr
+
+replication:
+  replSetName: cfgRS

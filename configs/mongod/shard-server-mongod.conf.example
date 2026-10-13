@@ -1,0 +1,19 @@
+# Merge into the existing mongod configuration on shard-data1.
+systemLog:
+  destination: file
+  logAppend: true
+  path: /var/log/mongodb/mongod.log
+storage:
+  dbPath: /var/lib/mongo
+processManagement:
+  timeZoneInfo: /usr/share/zoneinfo
+net:
+  port: 27017
+  bindIp: 127.0.0.1,192.168.56.111
+security:
+  authorization: enabled
+  keyFile: /etc/mongodb-sharded-key
+replication:
+  replSetName: shardRS
+sharding:
+  clusterRole: shardsvr

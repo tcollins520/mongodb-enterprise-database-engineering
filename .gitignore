@@ -1,0 +1,47 @@
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*keyfile*
+*key-file*
+secrets/
+credentials/
+
+# MongoDB data and database files
+data/
+db/
+dump/
+dumps/
+backups/
+backup/
+*.bson
+*.bson.gz
+*.archive
+*.wt
+WiredTiger*
+mongod.lock
+
+# Logs
+*.log
+logs/
+
+# Local editor and operating system files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.bak
+*.orig
+
+# Compressed database backups and diagnostic archives
+*.gz
+*.zip
+*.tar
+*.tgz
+*.diagnostic.data
